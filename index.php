@@ -1,4 +1,20 @@
+<?php
+include "./connection.php";
+if (isset($_POST['create'])) {
+    $titulo= $_POST['titulo'];
+    $conteudo = $_POST['conteudo'];
+    
 
+    $sql = "INSERT INTO aulas(titulo, conteudo) VALUES ('$titulo', '$conteudo')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Adicionado com sucesso";
+    } else {
+        echo "Erro: " . $sql . "<br>" . $conn->error;
+    }
+}
+
+?>
 
 
 <!DOCTYPE html>
@@ -9,7 +25,17 @@
     <title>Página Inicial</title>
 </head>
 <body>
+    <div class= "nota">
+    <h2>Notas</h2>
+<form method="POST" action="">
+    titulo: <input type="text" name="conteudo" required><br><br>
+    conteudo: <input type="text" name="conteudo" required><br><br>
+    <input type="submit" name="create" value="adicionar nota">
+</form>
+    </div>
+
 
     
 </body>
 </html>
+<?php $conn->close() ?>
