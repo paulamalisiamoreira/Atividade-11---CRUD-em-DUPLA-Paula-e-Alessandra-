@@ -25,14 +25,11 @@ if (isset($_POST['create'])) {
     <title>Página Inicial</title>
 </head>
 <body>
-    <div class= "nota">
-    <h2>Notas</h2>
-<form method="POST" action="">
-    titulo: <input type="text" name="conteudo" required><br><br>
-    conteudo: <input type="text" name="conteudo" required><br><br>
-    <input type="submit" name="create" value="adicionar nota">
-</form>
-    </div>
+
+  <input type="submit" name="create" value="adicionar nota">
+   
+    
+
 
 
     
